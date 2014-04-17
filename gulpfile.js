@@ -10,27 +10,40 @@ var rename = require( "gulp-rename" );
 var browserSync = require( "browser-sync" );
 
 var src = {
-  styles: "src/app/styles",
-  scripts: "src/app/scripts"
+  styles: "src/app/styles/*.styl",
+  scripts: "src/app/scripts/app.coffee",
+  templates: "src/app/*.jade"
 }
 
 gulp.task( "styles", function() {
   gulp.src( src.styles )
-  .pipe( cached( src.styles ) )
-  .pipe( changed( src.styles ) )
-  .pipe( stylus( { use: [ "nib" ] } ) )
-    .on( "error", gutil.log )
-    .on( "error", gutil.beep )
-  .pipe( gulp.dest( "app/css/" ) );
+      .pipe( cached( src.styles ) )
+      .pipe( changed( src.styles ) )
+      .pipe( stylus( { use: [ "nib" ] } ) )
+        .on( "error", gutil.log )
+        .on( "error", gutil.beep )
+      .pipe( gulp.dest( "app/css/" ) );
         
 } );
 
 gulp.task( "scripts", function() {
+  gulp.src( src.scripts )
+      .pipe( cached( src.scripts ) )
+      .pipe( changed( src.scripts ) )
+      .pipe( browserify( { transform: [ "coffeeify" ], extensions: [ ".coffee" ] } ) )
+      .pipe( rename( "app.js" ) )
+      .pipe( gulp.dest( "app/" ) );
 
 } );
 
 gulp.task( "templates", function() {
-
+  gulp.src( src.templates )
+      .pipe( cached( src.templates ) )
+      .pipe( changed( src.templates ) )
+      .pipe( jade( { pretty: true, basedir: src.templates } ) )
+        .on( "error", gutil.log )
+        .on( "error", gutil.beep )
+      .pipe( gulp.dest( "app/" ) );
 } );
 
 gulp.task( "watch", function() {
