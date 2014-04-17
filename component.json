@@ -1,9 +1,0 @@
-{
-  "name": "oreovanilla-thunasses",
-  "paths": [
-    "app"
-  ],
-  "local": [
-    "boot"
-  ]
-}
