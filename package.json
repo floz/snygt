@@ -20,6 +20,8 @@
     "gulp-util": "*",
     "gulp-coffee": "*",
     "gulp-rename": "*",
+    "gulp-debug": "*",
+    "coffeeify": "*",
 
     "browser-sync": "*"
   }

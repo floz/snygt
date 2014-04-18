@@ -15,6 +15,16 @@ var src = {
   templates: "src/app/*.jade"
 }
 
+gulp.task( "browser-sync", function() {
+
+  browserSync.init( [ "app/js/*.js", "app/css/*.css", "app/*.html" ], {
+    server: {
+      baseDir: "./app"
+    }
+  } );
+
+} );
+
 gulp.task( "styles", function() {
   gulp.src( src.styles )
       .pipe( cached( src.styles ) )
@@ -27,12 +37,12 @@ gulp.task( "styles", function() {
 } );
 
 gulp.task( "scripts", function() {
-  gulp.src( src.scripts )
+  gulp.src( src.scripts, { read: false } )
       .pipe( cached( src.scripts ) )
       .pipe( changed( src.scripts ) )
       .pipe( browserify( { transform: [ "coffeeify" ], extensions: [ ".coffee" ] } ) )
       .pipe( rename( "app.js" ) )
-      .pipe( gulp.dest( "app/" ) );
+      .pipe( gulp.dest( "app/js" ) );
 
 } );
 
@@ -40,7 +50,7 @@ gulp.task( "templates", function() {
   gulp.src( src.templates )
       .pipe( cached( src.templates ) )
       .pipe( changed( src.templates ) )
-      .pipe( jade( { pretty: true, basedir: src.templates } ) )
+      .pipe( jade( { pretty: true, basedir: "src/" } ) )
         .on( "error", gutil.log )
         .on( "error", gutil.beep )
       .pipe( gulp.dest( "app/" ) );
@@ -53,3 +63,5 @@ gulp.task( "watch", function() {
   gulp.watch( "src/**/*.coffee", [ "scripts" ] );
 
 } );
+
+gulp.task( "default", [ "browser-sync", "styles", "templates", "scripts", "watch" ] );
