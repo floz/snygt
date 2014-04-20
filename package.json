@@ -22,6 +22,7 @@
     "gulp-rename": "*",
     "gulp-debug": "*",
     "coffeeify": "*",
+    "nib": "*",
 
     "browser-sync": "*"
   }

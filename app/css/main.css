@@ -1,0 +1,72 @@
+header {
+  height: 560px;
+  background-color: #eaebeb;
+  font: normal 85px/560px "geogrotesque_bdbold";
+  color: #fff;
+  text-align: center;
+  text-shadow: 0px 4px #d7d9d9;
+}
+.menu {
+  position: relative;
+  width: 100%;
+  background-color: #0f1013;
+  height: 80px;
+  overflow: hidden;
+  border-top: 2px solid #31353d;
+}
+.menu__entry {
+  background-color: #24272e;
+  height: 76px;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+.menu__entry a {
+  text-decoration: none;
+  color: #fff;
+  font: normal 16px/76px "geogrotesque_rgregular";
+  text-shadow: 0px -2px #040406;
+}
+.menu__entry a,
+.menu__entry span {
+  display: inline-block;
+}
+.menu__entry .border {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+}
+.menu__entry .border--left {
+  left: 0;
+  background-color: #31353d;
+}
+.menu__entry .border--right {
+  right: 0;
+  background-color: #0f1013;
+}
+.menu__entry .icon {
+  position: relative;
+  width: 22px;
+  line-height: 0px;
+}
+.menu__infos {
+  width: 20%;
+}
+.menu__filter {
+  width: 40%;
+}
+.icon__line {
+  display: block;
+  width: 100%;
+  background-color: #dbdfdf;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px -1px 0px 0px #0f1013;
+  box-shadow: 0px -1px 0px 0px #0f1013;
+}
+.icon__line--thin {
+  height: 3px;
+}
+.icon__line--fat {
+  height: 8px;
+}

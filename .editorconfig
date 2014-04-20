@@ -10,5 +10,5 @@ draw_white_space = all
 [*.{coffee}]
 indent_size = 4
 
-[*.{jade,html,js,html,scss}]
+[*.{jade,html,js,html,scss,styl}]
 indent_size = 2
