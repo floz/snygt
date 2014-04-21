@@ -1,0 +1,12 @@
+mixin entry-project( author, techno, side )
+  div( class="entry entry--project entry--project-#{side}" )
+      .entry__bg
+        .entry__bg__deco.entry__bg__deco--top
+        .entry__bg__deco.entry__bg__deco--bot
+      .entry__preview
+        img.entry__preview-img(src="img/entry_default_preview.jpg", alt="")
+      .entry__infos
+        .entry__infos__author= author
+        .entry__infos__techno= techno
+      .entry__arrow
+
