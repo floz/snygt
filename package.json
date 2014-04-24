@@ -21,6 +21,7 @@
     "gulp-coffee": "*",
     "gulp-rename": "*",
     "gulp-debug": "*",
+    "gulp-newer": "*",
     "coffeeify": "*",
     "nib": "*",
 

@@ -2,7 +2,8 @@ var gulp = require( "gulp" );
 var debug = require( "gulp-debug" );
 var changed = require( "gulp-changed" );
 var cached = require( "gulp-cached" );
-var stylus = require( "gulp-stylus" );
+var stylus = require( "gulp-stylus-modules" );
+var stylusImg = require( "gulp-stylusimg-modules" );
 var jade = require( "gulp-jade" );
 var browserify = require( "gulp-browserify" );
 var gutil = require( "gulp-util" );
@@ -28,14 +29,19 @@ gulp.task( "browser-sync", function() {
 
 gulp.task( "styles", function() {
   gulp.src( src.styles )
-      // .pipe( cached( src.styles ) )
-      // .pipe( changed( src.styles ) )
-      .pipe( stylus( { use: [ nib() ] } ) )
+      .pipe( stylus( { use: [ nib() ], url: { paths: [ "app/img/" ] } } ) )
         .on( "error", gutil.log )
         .on( "error", gutil.beep )
       .pipe( gulp.dest( "app/css/" ) );
         
 } );
+
+gulp.task( "copyimages", function() {
+  gulp.src( src.styles )
+      .pipe( stylusImg( { use: [ nib() ], url: { paths: [ "app/img/" ] } } ) )
+        .on( "error", gutil.log )
+        .on( "error", gutil.beep );
+});
 
 gulp.task( "scripts", function() {
   gulp.src( src.scripts, { read: false } )
@@ -61,10 +67,12 @@ gulp.task( "templates", function() {
 
 gulp.task( "watch", function() {
 
-  gulp.watch( "src/**/*.styl", [ "styles" ] );
+  gulp.watch( "src/**/*.styl", [ "styles", "copyimages" ] );
   gulp.watch( "src/**/*.jade", [ "templates" ] );
   gulp.watch( "src/**/*.coffee", [ "scripts" ] );
 
 } );
 
-gulp.task( "default", [ "browser-sync", "styles", "templates", "scripts", "watch" ] );
+gulp.task( "default", [ "browser-sync", "styles", "copyimages", "templates", "scripts", "watch" ] );
+// gulp.task( "default", [ "styles" ] );
+// gulp.task( "default", [ "copyimages" ] );

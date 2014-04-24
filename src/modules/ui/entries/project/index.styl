@@ -1,6 +1,89 @@
 @import nib
 
-.entry--project
+.entry-project
   position relative
   width 724px
   margin 0 auto
+  background-color #fff
+  overflow hidden
+  border-radius( 4px )
+
+.entry-project__part
+  float left
+
+.entry-project__preview
+  position relative
+  width 440px
+  height 280px
+  overflow hidden
+
+.entry-project__infos
+  position relative
+  width 284px
+  height 280px
+  color #494c51
+  text-align center
+
+.entry-project__infos__bg
+  position absolute
+  width 100%
+  height 100%
+
+.trame-dot
+  position absolute
+  display block
+  width 1px
+  height 1px
+  background-color #d6d6d6
+
+.entry-project__infos__bg__deco--top
+  position absolute
+  left 10px
+  top 10px
+
+  px = 0, 3px, 7px
+  for i in (0..2)
+    .trame-dot--{i}
+      top px[ i ]
+
+  for i in (3..5)
+    .trame-dot--{i}
+      left px[ i - 3 ]
+
+  .trame-dot--6
+    left 3px
+    top 3px
+
+.entry-project__infos__bg__deco--bot
+  position absolute
+  right 10px
+  bottom 15px
+
+  px = 0, 3px, 7px
+  for i in (0..2)
+    .trame-dot--{i}
+      top px[ i ]
+
+  for i in (3..5)
+    .trame-dot--{i}
+      top 7px
+      right px[ i - 3 ]
+
+  .trame-dot--6
+    right 3px
+    top 3px
+
+.entry-project__infos__author
+  position relative
+  font normal 16px "geogrotesque_bdbold"
+  margin-top 100px
+
+.entry-project__infos__techno
+  font normal 16px "geogrotesque_lglight"
+
+.entry-project__arrow
+  position relative
+  background transparent url( "img/arrow.png" ) no-repeat  
+  width 16px
+  height 15px
+  margin 40px auto 0

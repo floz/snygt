@@ -4,5 +4,6 @@ block content
   include /modules/ui/header/template.jade
   include /modules/ui/menu/template.jade
 
-  include /modules/ui/entries/project/template.jade
-  +entry-project( "FLOZ", "WEBGL", "left" )
+  .main
+    include /modules/ui/entries/project/template.jade
+    +entry-project( "FLOZ", "WEBGL", "left" )
