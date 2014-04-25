@@ -120,58 +120,17 @@ header {
   position: absolute;
   left: 10px;
   top: 10px;
-}
-.entry-project__infos__bg__deco--top .trame-dot--0 {
-  top: 0;
-}
-.entry-project__infos__bg__deco--top .trame-dot--1 {
-  top: 3px;
-}
-.entry-project__infos__bg__deco--top .trame-dot--2 {
-  top: 7px;
-}
-.entry-project__infos__bg__deco--top .trame-dot--3 {
-  left: 0;
-}
-.entry-project__infos__bg__deco--top .trame-dot--4 {
-  left: 3px;
-}
-.entry-project__infos__bg__deco--top .trame-dot--5 {
-  left: 7px;
-}
-.entry-project__infos__bg__deco--top .trame-dot--6 {
-  left: 3px;
-  top: 3px;
+  background: transparent url("img/project/img/trame_top_left.png") no-repeat;
+  width: 12px;
+  height: 12px;
 }
 .entry-project__infos__bg__deco--bot {
   position: absolute;
   right: 10px;
-  bottom: 15px;
-}
-.entry-project__infos__bg__deco--bot .trame-dot--0 {
-  top: 0;
-}
-.entry-project__infos__bg__deco--bot .trame-dot--1 {
-  top: 3px;
-}
-.entry-project__infos__bg__deco--bot .trame-dot--2 {
-  top: 7px;
-}
-.entry-project__infos__bg__deco--bot .trame-dot--3 {
-  top: 7px;
-  right: 0;
-}
-.entry-project__infos__bg__deco--bot .trame-dot--4 {
-  top: 7px;
-  right: 3px;
-}
-.entry-project__infos__bg__deco--bot .trame-dot--5 {
-  top: 7px;
-  right: 7px;
-}
-.entry-project__infos__bg__deco--bot .trame-dot--6 {
-  right: 3px;
-  top: 3px;
+  bottom: 10px;
+  background: transparent url("img/project/img/trame_bot_right.png") no-repeat;
+  width: 12px;
+  height: 12px;
 }
 .entry-project__infos__author {
   position: relative;

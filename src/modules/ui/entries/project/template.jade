@@ -5,14 +5,8 @@ mixin entry-project( author, techno, side )
       .entry-project__part.entry-project__infos
         .entry-project__infos__bg
           .entry-project__infos__bg__deco.entry-project__infos__bg__deco--top
-            +trame()
           .entry-project__infos__bg__deco.entry-project__infos__bg__deco--bot
-            +trame()
         .entry-project__infos__author= author
         .entry-project__infos__techno= techno
         .entry-project__arrow
-
-mixin trame()
-  - for ( var i = 0; i < 7; ++i )
-    span( class="trame-dot trame-dot--#{i}" ) 
 
