@@ -5,10 +5,10 @@
   position: relative;
 }
 .entry-project-cnt--left {
-  left: -108px;
+  left: -118px;
 }
 .entry-project-cnt--right {
-  left: 108px;
+  left: 118px;
 }
 header {
   height: 560px;
