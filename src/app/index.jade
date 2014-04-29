@@ -6,7 +6,11 @@ block content
 
   .main
     include /modules/ui/entries/project/template.jade
-    +entry-project( "FLOZ", "WEBGL", "left" )
-    +entry-project( "FLOZ", "WEBGL", "right" )
-    +entry-project( "FLOZ", "WEBGL", "left" )
-    +entry-project( "FLOZ", "WEBGL", "right" )
+    .entry-project-cnt.entry-project-cnt--left
+      +entry-project( "FLOZ", "WEBGL", "left" )
+    .entry-project-cnt.entry-project-cnt--right
+      +entry-project( "FLOZ", "WEBGL", "right" )
+    .entry-project-cnt.entry-project-cnt--left
+      +entry-project( "FLOZ", "WEBGL", "left" )
+    .entry-project-cnt.entry-project-cnt--right
+      +entry-project( "FLOZ", "WEBGL", "right" )

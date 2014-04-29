@@ -1,6 +1,15 @@
 .main {
   background-color: #f2f3f3;
 }
+.entry-project-cnt {
+  position: relative;
+}
+.entry-project-cnt--left {
+  left: -108px;
+}
+.entry-project-cnt--right {
+  left: 108px;
+}
 header {
   height: 560px;
   background-color: #eaebeb;
