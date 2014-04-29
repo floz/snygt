@@ -2,7 +2,7 @@
 
 .entry-project
   position relative
-  width 724px
+  width 725px
   margin 0 auto
   background-color #fff
   overflow hidden
@@ -24,17 +24,18 @@
   color #494c51
   text-align center
 
+.entry-project--left
+  .entry-project__infos
+    border-left 1px solid rgba( 0, 0, 0, .1 )
+
+.entry-project--right
+  .entry-project__infos
+    border-right 1px solid rgba( 0, 0, 0, .1 )
+
 .entry-project__infos__bg
   position absolute
   width 100%
   height 100%
-
-.trame-dot
-  position absolute
-  display block
-  width 1px
-  height 1px
-  background-color #d6d6d6
 
 .entry-project__infos__bg__deco--top
   position absolute
@@ -66,3 +67,11 @@
   width 16px
   height 15px
   margin 40px auto 0
+
+.entry-project__shadow
+  position absolute
+  bottom 0
+  width 100%
+  height 4px
+  background-color #000
+  opacity( .1 )
