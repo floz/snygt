@@ -5,12 +5,18 @@ block content
   include /modules/ui/menu/template.jade
 
   .main
-    include /modules/ui/entries/project/template.jade
-    .entry-project-cnt.entry-project-cnt--left
-      +entry-project( "FLOZ", "WEBGL", "left" )
-    .entry-project-cnt.entry-project-cnt--right
-      +entry-project( "FLOZ", "WEBGL", "right" )
-    .entry-project-cnt.entry-project-cnt--left
-      +entry-project( "FLOZ", "WEBGL", "left" )
-    .entry-project-cnt.entry-project-cnt--right
-      +entry-project( "FLOZ", "WEBGL", "right" )
+    .page.page--home
+      include /modules/ui/timeline/background/template.jade
+      include /modules/ui/entries/project/template.jade
+      .entry-project-cnt.entry-project-cnt--left
+        +entry-project( "FLOZ", "WEBGL", "left" )
+      .entry-project-cnt.entry-project-cnt--right
+        +entry-project( "FLOZ", "WEBGL", "right" )
+      .entry-project-cnt.entry-project-cnt--left
+        +entry-project( "FLOZ", "WEBGL", "left" )
+      .entry-project-cnt.entry-project-cnt--right
+        +entry-project( "FLOZ", "WEBGL", "right" )
+
+      include /modules/ui/expand/template.jade
+
+  include /modules/ui/footer/template.jade

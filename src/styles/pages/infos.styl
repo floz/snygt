@@ -1,0 +1,60 @@
+@import "nib"
+@import "core/fonts"
+
+.infos
+  background-color #725dfa
+
+.infos__title
+  text-align center
+  .trame
+    display inline-block
+    height 53px
+  .trame--left
+    background transparent url( "img/infos/trame_left.png" ) no-repeat
+    width 490px
+    margin-right 22px
+  .trame--right
+    background transparent url( "img/infos/trame_right.png" ) no-repeat
+    width 489px
+    margin-left 15px
+  h2
+    display inline-block
+    font normal 76px bold
+    color #fff
+    letter-spacing 10px
+    text-shadow 0px 4px 0px #6150d4
+
+.infos__desc
+  position relative
+  color #fff
+  font normal 16px regular
+  width 465px
+  margin 22px auto 0
+
+.infos__created-by
+  color #362c76
+  font normal 16px regular
+  text-align center
+  margin-top 70px
+  margin-bottom 60px
+  ul
+    margin-top 20px
+  li
+    display inline-block
+    border-radius( 4px )
+    border 2px solid #5849bf
+    box-shadow inset 0 1px 0px #7f6cfd, 0 1px 0 #7f6cfd
+    &:first-child
+      margin-right 25px
+    &:last-child
+      margin-left 25px
+  a
+    display inline-block
+    text-decoration none
+    color #473b9a
+    height 80px
+    padding-left 50px
+    padding-right 50px
+    line-height 80px
+    text-shadow 0 2px 0px #7f6cfd
+

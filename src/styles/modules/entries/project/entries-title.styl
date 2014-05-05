@@ -1,0 +1,57 @@
+@import "nib"
+@import "core/fonts"
+
+h = 82px
+
+.entries-title
+  position relative
+  background-color #21252a
+  border-radius( 4px )
+  width 285px
+  height h
+  overflow hidden
+  margin 0 auto
+  text-shadow 0px -2px 0px #000
+
+.entries-title__part--left
+  float left
+  text-align center
+  width 200px
+  border-right 1px solid #000
+
+.entries-title__part--right
+  float right
+  width 83px
+  text-align center
+  border-left 1px solid #31353d
+
+.entries-title__theme
+  font normal 16px/h bold
+  color #f2f3f3
+  display inline-block
+  letter-spacing 1px
+
+.entries-title__count, .entries-title__month
+  font normal 16px/h regular
+  color #67696d
+  display inline-block
+
+.entries-title__count
+  padding-left 10px
+
+.entries-title__shadow
+  position absolute
+  bottom 0
+  width 100%
+  height 4px
+  background-color #0f1013
+
+.entries-title--big
+  width 405px
+  height h = 160px
+  .entries-title__part--left
+    width 244px
+  .entries-title__part--right
+    width 159px
+  .entries-title__theme, .entries-title__count, .entries-title__month
+    line-height h

@@ -2,8 +2,7 @@ var gulp = require( "gulp" );
 var debug = require( "gulp-debug" );
 var changed = require( "gulp-changed" );
 var cached = require( "gulp-cached" );
-var stylus = require( "gulp-stylus-modules" );
-var stylusImg = require( "gulp-stylusimg-modules" );
+var stylus = require( "gulp-stylus" );
 var jade = require( "gulp-jade" );
 var browserify = require( "gulp-browserify" );
 var gutil = require( "gulp-util" );
@@ -12,9 +11,9 @@ var browserSync = require( "browser-sync" );
 var nib = require( "nib" );
 
 var src = {
-  styles: "src/app/styles/*.styl",
-  scripts: "src/app/scripts/app.coffee",
-  templates: "src/app/*.jade"
+  styles: "src/styles/*.styl",
+  scripts: "src/scripts/app.coffee",
+  templates: "src/templates/*.jade"
 }
 
 gulp.task( "browser-sync", function() {
@@ -36,13 +35,6 @@ gulp.task( "styles", function() {
         
 } );
 
-gulp.task( "copyimages", function() {
-  gulp.src( src.styles )
-      .pipe( stylusImg( { use: [ nib() ], url: { paths: [ "app/img/" ] } } ) )
-        .on( "error", gutil.log )
-        .on( "error", gutil.beep );
-});
-
 gulp.task( "scripts", function() {
   gulp.src( src.scripts, { read: false } )
       .pipe( cached( src.scripts ) )
@@ -57,9 +49,7 @@ gulp.task( "scripts", function() {
 
 gulp.task( "templates", function() {
   gulp.src( src.templates )
-      // .pipe( cached( src.templates ) )
-      // .pipe( changed( src.templates ) )
-      .pipe( jade( { pretty: true, basedir: "src/" } ) )
+      .pipe( jade( { pretty: true, basedir: "src/templates" } ) )
         .on( "error", gutil.log )
         .on( "error", gutil.beep )
       .pipe( gulp.dest( "app/" ) );
@@ -67,12 +57,10 @@ gulp.task( "templates", function() {
 
 gulp.task( "watch", function() {
 
-  gulp.watch( "src/**/*.styl", [ "styles", "copyimages" ] );
+  gulp.watch( "src/**/*.styl", [ "styles" ] );
   gulp.watch( "src/**/*.jade", [ "templates" ] );
   gulp.watch( "src/**/*.coffee", [ "scripts" ] );
 
 } );
 
-gulp.task( "default", [ "browser-sync", "styles", "copyimages", "templates", "scripts", "watch" ] );
-// gulp.task( "default", [ "styles" ] );
-// gulp.task( "default", [ "copyimages" ] );
+gulp.task( "default", [ "browser-sync", "styles", "templates", "scripts", "watch" ] );

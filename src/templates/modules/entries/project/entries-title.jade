@@ -1,0 +1,15 @@
+mixin entry-title( theme, count, month )
+  .entries-title
+    +entry-title-content( theme, count, month )
+
+mixin entry-title-big( theme, count, month )
+  .entries-title.entries-title--big
+    +entry-title-content( theme, count, month )
+
+mixin entry-title-content( theme, count, month )
+  .entries-title__part.entries-title__part--left
+      .entries-title__theme= theme
+      .entries-title__count= count
+    .entries-title__part.entries-title__part--right
+      .entries-title__month= month
+    .entries-title__shadow
