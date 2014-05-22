@@ -11,20 +11,19 @@ var browserSync = require( "browser-sync" );
 var nib = require( "nib" );
 
 var src = {
-  styles: "src/styles/*.styl",
-  scripts: "src/scripts/app.coffee",
-  templates: "src/templates/*.jade"
+  styles: "client/src/styles/*.styl",
+  scripts: "client/src/scripts/app.coffee"
 }
 
-gulp.task( "browser-sync", function() {
+// gulp.task( "browser-sync", function() {
 
-  browserSync.init( [ "app/js/*.js", "app/css/*.css", "app/*.html" ], {
-    server: {
-      baseDir: "./app"
-    }
-  } );
+//   browserSync.init( [ "app/js/*.js", "app/css/*.css", "app/*.html" ], {
+//     server: {
+//       baseDir: "./app"
+//     }
+//   } );
 
-} );
+// } );
 
 gulp.task( "styles", function() {
   gulp.src( src.styles )
@@ -47,20 +46,11 @@ gulp.task( "scripts", function() {
 
 } );
 
-gulp.task( "templates", function() {
-  gulp.src( src.templates )
-      .pipe( jade( { pretty: true, basedir: "src/templates" } ) )
-        .on( "error", gutil.log )
-        .on( "error", gutil.beep )
-      .pipe( gulp.dest( "app/" ) );
-} );
-
 gulp.task( "watch", function() {
 
   gulp.watch( "src/**/*.styl", [ "styles" ] );
-  gulp.watch( "src/**/*.jade", [ "templates" ] );
   gulp.watch( "src/**/*.coffee", [ "scripts" ] );
 
 } );
 
-gulp.task( "default", [ "browser-sync", "styles", "templates", "scripts", "watch" ] );
+gulp.task( "default", [ "styles", "templates", "scripts", "watch" ] );
