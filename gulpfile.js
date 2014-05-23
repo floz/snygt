@@ -30,7 +30,7 @@ gulp.task( "styles", function() {
       .pipe( stylus( { use: [ nib() ], url: { paths: [ "app/img/" ] } } ) )
         .on( "error", gutil.log )
         .on( "error", gutil.beep )
-      .pipe( gulp.dest( "app/css/" ) );
+      .pipe( gulp.dest( "client/public/css/" ) );
         
 } );
 
@@ -42,7 +42,7 @@ gulp.task( "scripts", function() {
         .on( "error", gutil.log )
         .on( "error", gutil.beep )
       .pipe( rename( "app.js" ) )
-      .pipe( gulp.dest( "app/js" ) );
+      .pipe( gulp.dest( "client/public/js" ) );
 
 } );
 
@@ -53,4 +53,4 @@ gulp.task( "watch", function() {
 
 } );
 
-gulp.task( "default", [ "styles", "templates", "scripts", "watch" ] );
+gulp.task( "default", [ "styles", "scripts", "watch" ] );
