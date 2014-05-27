@@ -17,7 +17,16 @@ app.set( "view engine", "jade" );
 app.use( express.static( pathClient + "/public" ) );
 
 app.get( "/", function( request, response ) {
-  response.render( "index.jade" );
+  response.render( "home.jade" );
+} );
+
+app.get( "/details/:date/:id", function( request, response ) {
+  // console.log( request.params.id );
+  response.render( "details.jade" );
+} );
+
+app.get( "/infos", function( request, response ) {
+  response.render( "infos.jade" );
 } );
 
 app.get( "*", function( request, response ) {
