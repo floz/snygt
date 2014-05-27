@@ -25,6 +25,6 @@
     "coffeeify": "*",
     "nib": "*",
 
-    "browser-sync": "*"
+    "browser-sync": "0.9.1"
   }
 }

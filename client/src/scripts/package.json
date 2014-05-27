@@ -1,0 +1,15 @@
+{
+  "name": "snygt",
+  "version": "0.0.1",
+  "author": "floz <florian.zumbrunn@gmail.com>",
+  "description": "SNYGT website",
+  "engines": {
+    "node": "*",
+    "npm": "*"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "page": "1.3.7"
+  }
+}
