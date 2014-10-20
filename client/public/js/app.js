@@ -4,6 +4,7 @@ require("./core/router")();
 (require("./views/menu")).init();
 
 
+
 },{"./core/router":2,"./views/menu":4}],2:[function(require,module,exports){
 var details, home, infos, page;
 
@@ -26,6 +27,7 @@ details = function() {
 infos = function() {
   return console.log("infos");
 };
+
 
 
 },{"page":3}],3:[function(require,module,exports){
@@ -489,6 +491,7 @@ module.exports.init = function() {
     return page(domLinkInfos.getAttribute("href"));
   });
 };
+
 
 
 },{"page":3}]},{},[1])

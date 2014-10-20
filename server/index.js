@@ -1,18 +1,25 @@
 var http = require( "http" );
 var express = require( "express" );
+var morgan = require( "morgan" );
+var bodyParser = require( "body-parser" );
+var methodOverride = require( "method-override" );
 
 var app = express();
-
-app.use( express.logger( "dev" ) );
-app.use( express.json() );
 
 var pathClient = __dirname + "/../client"
 var pathViews = pathClient + "/src/views";
 
+// app.use( express.logger( "dev" ) );
+// app.use( express.json() );
+app.use( morgan( "dev" ) );
+app.use( bodyParser.urlencoded( { extended: false } ) );
+app.use( bodyParser.json() );
+app.use( methodOverride() );
+
 app.set( "views", pathViews );
+app.set( "view engine", "jade" );
 app.locals.basedir = app.get( "views" );
 app.locals.pretty = true;
-app.set( "view engine", "jade" );
 
 app.use( express.static( pathClient + "/public" ) );
 

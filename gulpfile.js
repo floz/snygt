@@ -1,7 +1,5 @@
 var gulp = require( "gulp" );
-var debug = require( "gulp-debug" );
 var stylus = require( "gulp-stylus" );
-var jade = require( "gulp-jade" );
 var browserify = require( "gulp-browserify" );
 var gutil = require( "gulp-util" );
 var rename = require( "gulp-rename" );
@@ -24,7 +22,7 @@ gulp.task( "browser-sync", function() {
 gulp.task( "styles", function() {
 
   gulp.src( src.styles )
-      .pipe( stylus( { use: [ nib() ], url: { paths: [ "app/img/" ] } } ) )
+      .pipe( stylus( { use: [ nib() ], url: { paths: [ "client/css/img/" ] } } ) )
         .on( "error", gutil.log )
         .on( "error", gutil.beep )
       .pipe( gulp.dest( "client/public/css/" ) );
