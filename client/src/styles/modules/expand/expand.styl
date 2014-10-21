@@ -4,9 +4,12 @@
 .expand
   position relative
   text-align center
+  a
+    text-decoration none
 
 .expand-entry
   display inline-block
+  width 240px
   height 80px
   border 2px solid #e2e2e2
   box-shadow: inset 0 1px 0px #fff, 0 1px 0 #fff
@@ -16,6 +19,12 @@
 .expand-entry__text
   font normal 16px/80px regular
   color #c4c3c3
-  padding-left 80px
-  padding-right 80px
   text-shadow 0px 2px 0px #fff
+
++q-medium()
+  h = 41px
+  .expand-entry
+    height h
+    width 120px
+  .expand-entry__text
+    line-height h

@@ -70,12 +70,23 @@
   display none
 
 .menu
-  +mobile-v()
+  +q-medium()
     display none
 
+
+// queries
+
 .menu--mobile
-  +mobile-v()
+  +q-medium()
     display block
+    border 0
+    &.menu--mobile-bottom
+      height 41px
+      .menu__entry
+        height 38px
+        a
+          font-size 13px
+          line-height 38px
     .menu__logo
       display block
       width 100%
@@ -83,7 +94,5 @@
       a
         bg( "menu/logo.png" )
         display inline-block
-    .menu__infos
-      display none
     .menu__filter
       width 50%

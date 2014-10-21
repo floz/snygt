@@ -7,13 +7,45 @@
 
 .entries-title-cnt
   position relative
-.entries-title-cnt--right
-  left 102px
 .entries-title-cnt--left
   left -97px
+.entries-title-cnt--right
+  left 102px
 
 .home--themes
   .entries-title-cnt--left
     left -41px
   .entries-title-cnt--right
     left 39px
+
+// queries
+
++q-v-large()
+  .entries-title-cnt--left
+    left -80px
+  .entries-title-cnt--right
+    left 77px
+  .entry-project-cnt--left
+    left -99px
+  .entry-project-cnt--right
+    left 98px
+
++q-medium()
+  .entries-title-cnt--left
+    left -17px
+  .entries-title-cnt--right
+    left 17px
+  .entry-project-cnt--left
+    left -20px
+  .entry-project-cnt--right
+    left 20px
+
++q-small()
+  .entries-title-cnt--left
+    left -18px
+  .entries-title-cnt--right
+    left 18px
+  .entry-project-cnt--left
+    left 0px
+  .entry-project-cnt--right
+    left 0px

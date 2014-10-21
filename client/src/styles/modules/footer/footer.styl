@@ -12,7 +12,9 @@ footer
   color #525760
   text-shadow 0px -1px 0px #000
   a
+    position relative
     color #525760
+    text-decoration none
   a, .copyright
     font normal 13px/120px regular
   .copyright, .social-bts, .social-bt
@@ -53,3 +55,32 @@ footer
 .footer__title
   font normal 20px/120px bold
   text-shadow 0px -2px 0px #000
+  letter-spacing 2px
+
+.footer__part--contacts
+  a
+    border-bottom solid 1px #525760
+    padding-bottom -10px
+    line-height 18px
+    top 50px
+
+// queries
+
++q-v-large()
+  footer
+    width 400px
+    height 190px
+    .border
+      display none
+    .footer__part
+      width 100%
+      float none
+      height 70px
+    .footer__part--details
+      position absolute
+      float none
+      top 85px
+    .footer__title
+      line-height 95px
+    .footer__part--contacts a
+      top 10px

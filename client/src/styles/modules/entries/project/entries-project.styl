@@ -3,6 +3,7 @@
 .entry-project
   position relative
   width 725px
+  height 280px
   margin 0 auto
   background-color #fff
   overflow hidden
@@ -17,7 +18,7 @@
 .entry-project__preview
   position relative
   width 440px
-  height 280px
+  height 100%
   overflow hidden
 
 .entry-project__infos
@@ -78,3 +79,44 @@
   height 4px
   background-color #000
   opacity( .1 )
+
+
+// queries
+
++q-v-large()
+  .entry-project
+    width 582px
+    height 224px
+  .entry-project__preview
+    width 354px
+  .entry-project__infos
+    width 226px
+    height 220px
+  .entry-project__infos__author
+    margin-top 75px
+  .entry-project__arrow
+    margin-top 25px
+
++q-medium()
+  .entry-project
+    width 360px
+    height 140px
+  .entry-project__preview
+    width 219px
+  .entry-project__infos
+    width 140px
+    height 136px
+  .entry-project__infos__author
+    margin-top 35px
+  .entry-project__arrow
+    margin-top 20px
+
++q-small()
+  .entry-project
+    width 320px
+    height 140px
+  .entry-project__preview
+    width 178px
+  .entry-project__infos
+    width 141px
+    height 136px
